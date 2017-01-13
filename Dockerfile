@@ -1,4 +1,4 @@
-FROM hyperknot/baseimage16:latest
+FROM ubuntu:trusty
 MAINTAINER Alex Newman <alex@newman.pro>
 
 # Let the container know that there is no TTY
@@ -15,7 +15,7 @@ RUN apt-get -y update && \
     libbz2-dev \
     libstxxl-dev \
     libstxxl-doc \
-    libstxxl1v5 \
+    libstxxl1 \
     libtbb-dev \
     libxml2-dev \
     libzip-dev \
