@@ -30,9 +30,11 @@ RUN mkdir -p /osrm-build \
 
 WORKDIR /osrm-build
 
-RUN curl --silent -L https://github.com/Project-OSRM/osrm-backend/archive/v5.5.2.tar.gz -o v5.5.2.tar.gz \
- && tar xzf v5.5.2.tar.gz \
- && mv osrm-backend-5.5.2 /osrm-src \
+#RUN curl --silent -L https://github.com/Project-OSRM/osrm-backend/archive/v5.5.2.tar.gz -o v5.5.2.tar.gz \
+# && tar xzf v5.5.2.tar.gz \
+# && mv osrm-backend-5.5.2 /osrm-src \
+
+RUN git clone https://github.com/Project-OSRM/osrm-backend.git /osrm-src \
  && cmake /osrm-src \
  && make \
  && mv /osrm-src/profiles/car.lua profile.lua \
