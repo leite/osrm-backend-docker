@@ -5,7 +5,7 @@ MAINTAINER Alex Newman <alex@newman.pro>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install necessary packages for proper system state
-RUN apt-get -y update && apt-get install -y --no-install-recommends apt-utils && \
+RUN apt-get -y update && \
     apt-get install -y \
     build-essential \
     cmake \
