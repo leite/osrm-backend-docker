@@ -1,11 +1,12 @@
-FROM ubuntu:xenial
+FROM hyperknot/baseimage16:latest
 MAINTAINER Alex Newman <alex@newman.pro>
 
 # Let the container know that there is no TTY
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install necessary packages for proper system state
-RUN apt-get -y update && apt-get install -y \
+RUN apt-get -y update && apt-get install -y --no-install-recommends apt-utils && \
+    apt-get install -y \
     build-essential \
     cmake \
     curl \
